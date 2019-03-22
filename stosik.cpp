@@ -43,3 +43,9 @@ bool stos::jest(int x)
       }
     return false;
 }
+
+stos::~stos()
+{
+    while(pierwszy!=NULL)
+        usun();
+}
