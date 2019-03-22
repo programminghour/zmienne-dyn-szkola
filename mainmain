@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+#include "stos.h"
+
+using namespace std;
+
+int main()
+{
+    stos stosik;
+
+    stosik.dodaj(2);
+    stosik.dodaj(3);
+    stosik.dodaj(4);
+
+    stosik.wypisz();
+
+    cout<<endl;
+
+    stosik.usun();
+    stosik.wypisz();
+
+
+    return 0;
+}
