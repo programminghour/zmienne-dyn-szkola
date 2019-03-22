@@ -14,5 +14,6 @@ class stos {
     void dodaj(float x);
     void wypisz();
     void usun();
-
+     bool jest(int x);
+    ~stos();
 };
