@@ -49,3 +49,19 @@ stos::~stos()
     while(pierwszy!=NULL)
         usun();
 }
+void stos::udow(int x)
+{
+    element *tmp=pierwszy;
+    element *tmp1= tmp -> nast;
+
+    while(tmp!=NULL)
+      {
+        if(tmp -> dana == x)
+            delete tmp;
+        tmp=tmp->nast;
+      }
+
+    //pierwszy = tmp -> nast;
+    //delete tmp;
+}
+
