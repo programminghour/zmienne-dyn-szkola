@@ -32,3 +32,14 @@ void stos::usun()
     pierwszy = tmp -> nast;
     delete tmp;
 }
+
+bool stos::jest(int x)
+{
+    element *tmp=pierwszy;
+     while(tmp!=NULL)
+      { if(tmp -> dana == x)
+            return true;
+        tmp=tmp->nast;
+      }
+    return false;
+}
