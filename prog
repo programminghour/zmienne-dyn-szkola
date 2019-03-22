@@ -3,49 +3,9 @@
 
 using namespace std;
 
-struct element{
-    public:
-        float dana;
-        element *nast;
-
-};
-
-class stos {
-  protected:
-       element *pierwszy;
-  public:
-         stos();
-    void dodaj(float x);
-    void wypisz();
-
-};
-
-stos::stos()
-{ pierwszy = NULL;}
-
-void stos::dodaj(float x)
-{
-       element *tmp = new element;
-       tmp->dana=x;
-       tmp->nast=pierwszy;
-       pierwszy=tmp;
-
-}
-
-void stos::wypisz()
- {
-     element *tmp=pierwszy;
-     while(tmp!=NULL)
-      { cout<<tmp->dana<<" ";
-        tmp=tmp->nast;
-      }
-
-}
-
-
-
 int main()
 {
+    int li;
     stos stosik;
 
     stosik.dodaj(2);
@@ -54,5 +14,14 @@ int main()
 
     cout<<endl;
 
+
+     cout<<"Podaj liczbe:";
+   // stosik.usun();
+   if(stosik.jest(4))
+        cout<<"Jest";
+   else
+        cout<<"Nie ma";
+   // stosik.wypisz();
+   
     return 0;
 }
