@@ -1,0 +1,123 @@
+Zmienne dynamiczne 
+Przykład:
+1.	intzmienna;
+2.	int *wskaznik;
+3.	wskaznik = &zmienna;
+1) zwykła zmienna
+2) wskaźnik na miejsce przechowywania zmiennej typu int
+3) przypisanie wskaźnikowi adresu zmiennej
+Przykład 2 :
+(przeanalizuj, działanie programu, a następnie sprawdź uruchamiając go)
+ int *w;
+    inta,b;
+    
+    cout<<"a : " ; 
+    cin>>a;
+    cout<<"b : " ; 
+    cin>>b;
+
+    w=&a;
+    
+    cout<<"a=" <<a<<" b="<<b<<" w="<<w<<"  *w="<<*w<<endl;
+    
+    a++; b++;
+    
+    cout<<"a=" <<a<<" b="<<b<<" w="<<w<<"  *w="<<*w<<endl;
+    
+    (*w)++;
+    
+    cout<<"a=" <<a<<" b="<<b<<" w="<<w<<"  *w="<<*w<<endl;
+ 
+
+
+NULL - wskaźnik pusty
+new - utworzenie nowego wskaźnika (przydzielenie pamięci)
+delete - usunięcie wskaźnika z pamięci
+np.
+    int *w;
+     w = newint;
+    *w = 12;
+    
+    cout<<"w="<<*w<<endl;
+    delete w;
+-> bez new byłby błąd
+do poczytania: http://guidecpp.cal.pl/cplus,pointers 
+
+
+ 
+stos 
+dynamiczna struktura danych typu stos:
+ 
+Początek przykładowej implementacji: (reszta na zajęciach)
+________________________________________
+ struct element{
+    public:
+        float dana;
+        element *nast;
+
+};
+
+class stos {
+  protected:
+       element *pierwszy;
+  public:
+         stos();
+    void dodaj(float x); 
+    void wypisz();                 
+      
+      };
+________________________________________
+#include<cstdlib>
+#include<iostream>
+#include "stos.h"
+
+
+
+usingnamespacestd;
+
+stos::stos()
+{ pierwszy = NULL;}
+
+void stos::dodaj(float x)
+{ 
+       element *tmp = new element;
+       tmp->dana=x;
+       tmp->nast=pierwszy;
+       pierwszy=tmp;
+     
+     }
+
+void stos::wypisz()
+ { 
+     element *tmp=pierwszy;
+     while(tmp!=NULL) 
+      { cout<<tmp->dana<<" ";
+        tmp=tmp->nast;
+      }
+     
+     }
+
+________________________________________
+#include <cstdlib>
+#include <iostream>
+#include "stos.h"
+
+
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    stosstosik;
+    
+    stosik.dodaj(2);
+    stosik.dodaj(3);
+    stosik.wypisz();
+    
+    cout<<endl;
+   
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+
+
