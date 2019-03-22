@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+struct element{
+    public:
+        float dana;
+        element *nast;
+
+};
+
+class stos {
+  protected:
+       element *pierwszy;
+  public:
+         stos();
+    void dodaj(float x);
+    void wypisz();
+
+};
+
+stos::stos()
+{ pierwszy = NULL;}
+
+void stos::dodaj(float x)
+{
+       element *tmp = new element;
+       tmp->dana=x;
+       tmp->nast=pierwszy;
+       pierwszy=tmp;
+
+}
+
+void stos::wypisz()
+ {
+     element *tmp=pierwszy;
+     while(tmp!=NULL)
+      { cout<<tmp->dana<<" ";
+        tmp=tmp->nast;
+      }
+
+}
+
+
+
+int main()
+{
+    stos stosik;
+
+    stosik.dodaj(2);
+    stosik.dodaj(3);
+    stosik.wypisz();
+
+    cout<<endl;
+
+    return 0;
+}
