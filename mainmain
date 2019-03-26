@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     int li;
-    
+
     stos stosik;
 
     stosik.dodaj(2);
@@ -17,19 +17,19 @@ int main()
     stosik.wypisz();
 
     cout<<endl;
-
-    stosik.usun();
-    stosik.wypisz();
-     cout<<"Podaj liczbe:";
-     
+    cout<<"Podaj liczbe:";
    // stosik.usun();
-   
-   if(stosik.jest(4))
-        cout<<"Jest";
-   else
-        cout<<"Nie ma";
-        
+   cin >> li;
+   if(stosik.jest(li))   stosik.usel(li);
+
+   stosik.wypisz();
+
+   //if(stosik.jest(8))
+ //       cout<<"Jest";
+ //  else
+    //    cout<<"Nie ma";
    // stosik.wypisz();
+
 
     return 0;
 }
