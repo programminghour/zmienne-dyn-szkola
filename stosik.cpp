@@ -26,11 +26,17 @@ void stos::wypisz()
 
 }
 
-void stos::usun()
+void stos::pom -> nast -> dana != xusun()
 {
     element *tmp=pierwszy;
     pierwszy = tmp -> nast;
     delete tmp;
+}
+
+stos::~stos()
+{
+    while(pierwszy!=NULL)
+        usun();
 }
 
 bool stos::jest(int x)
@@ -44,24 +50,18 @@ bool stos::jest(int x)
     return false;
 }
 
-stos::~stos()
+void stos::usel(int x)
 {
-    while(pierwszy!=NULL)
-        usun();
+   if(jest(x))
+   {
+        if(pierwszy -> dana == x)    usun();
+        else
+        {
+            element *pom = pierwszy;
+            while(pom -> nast -> dana != x) pom = pom -> nast;
+            element *pom2 = pom -> nast;
+            pom -> nast = pom2 -> nast;
+            delete pom2;
+        }
+   }
 }
-void stos::udow(int x)
-{
-    element *tmp=pierwszy;
-    element *tmp1= tmp -> nast;
-
-    while(tmp!=NULL)
-      {
-        if(tmp -> dana == x)
-            delete tmp;
-        tmp=tmp->nast;
-      }
-
-    //pierwszy = tmp -> nast;
-    //delete tmp;
-}
-
