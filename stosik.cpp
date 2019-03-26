@@ -26,7 +26,7 @@ void stos::wypisz()
 
 }
 
-void stos::pom -> nast -> dana != xusun()
+void stos::usun()
 {
     element *tmp=pierwszy;
     pierwszy = tmp -> nast;
